@@ -3,9 +3,9 @@
   "version": "1.0.0",
   "homepage": "https://floppydoval.github.io/LanguageGO",
   "scripts": {
-    "build": "cd client && npm install && npm run build",
+    "build": "cd client && npm ci && npm run build",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d client/build -b gh-pages"
+    "deploy": "gh-pages -d client/build"
   },
   "dependencies": {
     "@clerk/clerk-react": "^5.15.2",
