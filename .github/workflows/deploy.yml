@@ -28,15 +28,10 @@ jobs:
           cache: 'npm'
           cache-dependency-path: client/package-lock.json
           
-      - name: Install dependencies
+      - name: Create test deployment
         run: |
-          cd client
-          npm ci
-          
-      - name: Build
-        run: |
-          cd client
-          npm run build
+          mkdir -p test-deploy
+          cp test-index.html test-deploy/index.html
           
       - name: Setup Pages
         uses: actions/configure-pages@v4
@@ -44,7 +39,7 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: client/build
+          path: test-deploy
           
   deploy:
     environment:
